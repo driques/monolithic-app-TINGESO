@@ -11,6 +11,7 @@ Utilizar git para poder copiar el repositorio, o de plano descargarlo.
 
 * instalar [Java](https://www.java.com)
 * Tener instalado [MySql](https://www.mysql.com/download/)
+* Springboot v2.7.3
 * Gestor de BD de PostgreSQL como [PgAdmin](https://www.pgadmin.org/downloads/)
 ## Ejecutando las pruebas ⚙️
 
