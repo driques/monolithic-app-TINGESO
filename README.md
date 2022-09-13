@@ -16,7 +16,7 @@ Utilizar git para poder copiar el repositorio, o de plano descargarlo.
 ## Ejecutando las pruebas ⚙️
 
 ## Construido con 🛠️
- ![Java](https://img.shields.io/badge/Java-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![SpringBoot](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+ ![Java](https://img.shields.io/badge/Java-3670A0?style=for-the-badge&logo=java&logoColor=ffdd54) ![SpringBoot](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
 
 ## Autor ✒️
