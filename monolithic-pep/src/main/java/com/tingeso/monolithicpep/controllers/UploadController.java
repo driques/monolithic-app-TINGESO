@@ -13,13 +13,20 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-//https://www.youtube.com/watch?v=BmL_THqZLEA
+
 @Controller
 public class UploadController {
     @GetMapping("/")
     public String index(){
 
-        return null;
+        return "upload";
+    }
+    @GetMapping("/test-file")
+    public String testFile(){
+        FileController getData = new FileController();
+        String myData = getData.readTxt("/Users/driques/Documents/2-2022/Tingeso/PEP 1 TINGESO/monolithic-app-TINGESO/monolithic-pep/src/main/resources/data_file/DATA.txt");
+        System.out.println(myData);
+        return "test";
     }
     @PostMapping("/upload")
     public String UploadData(@RequestParam("file") MultipartFile file, RedirectAttributes attributes) throws IOException {
@@ -27,9 +34,9 @@ public class UploadController {
             System.out.println("Error en la subida de archivos");
             return null;
         }
-        createPath();
+        String newDir = createPath();
         StringBuilder constructor = new StringBuilder();
-        constructor.append(System.getProperty("user.home"));
+        constructor.append(newDir);
         constructor.append(File.separator);
         constructor.append("data_file");
         constructor.append(File.separator);
@@ -43,18 +50,24 @@ public class UploadController {
 
         attributes.addFlashAttribute("message","Datos cargados con exito.");
 
-        return null;
+        return "redirect:/status";
     }
 
+    @GetMapping("/status")
+    public String status(){
 
-    public void createPath(){
-        String directoryName = System.getProperty("home")+"/data_file";
+        return "status";
+    }
+
+    public String createPath(){
+        String directoryName = "src/main/resources/data_file";
         File directory = new File(directoryName);
         if (! directory.exists()){
             directory.mkdir();
         }
-
-        File file = new File(directoryName );
+        String newPath = directory.getAbsolutePath();
+        newPath = newPath.replace("/data_file","");
+        return newPath;
 
     }
 
