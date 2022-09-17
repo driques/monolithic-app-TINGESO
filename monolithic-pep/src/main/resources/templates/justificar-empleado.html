@@ -7,19 +7,22 @@
 </head>
 <body>
 <div class="container-sm">
-    <form th:object="${empleadoJustificar}" th:action="@{/productos/editar/} + ${empleadoJustificar.rut}" method="post">
-        <input type="hidden" th:field="*{rut}">
+    <form th:object="${empleadoJustificar}" th:action="@{/empleado/justificar/} + ${empleadoJustificar.rut}" method="post">
         <div class="form-group">
-            <label for="nombre">Nombre del empleado</label>
-            <input autocomplete="off" autofocus th:field="*{nombres}" id="nombre"
+            <label for="rut">Rut del empleado</label>
+            <input autocomplete="off" autofocus th:field="*{rut}" id="rut"
                    readonly="readonly" type="text"
                    class="form-control">
         </div>
+        <br>
+        <br>
         <div class="form-group">
             <label >Fecha de justificacion</label>
-            <input id="fecha_justificacion" type="date">
+            <input id="fecha_justificacion" type="date" autofocus th:field="*{fecha}">
         </div>
-        <button class="btn btn-success" type="submit">Guardar</button>
+        <br>
+        <br>
+        <button class="btn btn-success" type="submit">Justificar</button>
     </form>
 
 

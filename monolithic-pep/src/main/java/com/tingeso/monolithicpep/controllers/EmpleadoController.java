@@ -26,12 +26,7 @@ public class EmpleadoController {
         model.addAttribute("empleados",empleados);
         return "index";
     }
-    @GetMapping(value = "/justificar/{rut}")
-    public String formsJustificar(@PathVariable int rut, Model model){
-        System.out.println(empleadoService.obtenerPorId(rut));
-        empleadoService.obtenerPorId(rut).ifPresent(empleado-> model.addAttribute("empleadoJustificar",empleado));
-        return "justificar-empleado";
-    }
+
 
 
 }

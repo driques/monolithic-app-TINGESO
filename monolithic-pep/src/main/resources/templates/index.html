@@ -28,7 +28,7 @@
             <td th:text="${empleado.ingreso_empresa}"></td>
             <td>
                 <a class="btn btn-primary" href="#" role="button">Horas extras</a>
-                <a class="btn btn-danger" href="@{/justificar/} + ${empleado.rut}" role="button">Aplicar Justificativo</a>
+                <a class="btn btn-danger" th:href="@{/justificar/{id}(id=${empleado.rut})}" role="button">Aplicar Justificativo</a>
             </td>
         </tr>
         </tbody>
