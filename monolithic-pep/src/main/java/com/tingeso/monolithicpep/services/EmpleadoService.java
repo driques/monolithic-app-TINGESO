@@ -6,8 +6,8 @@ import com.tingeso.monolithicpep.repositories.EmpleadoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Optional;
 
 @Service
 public class EmpleadoService {
@@ -22,14 +22,16 @@ public class EmpleadoService {
         return empleadoRepository.save(empleado);
     }
 
-    public Optional<EmpleadoEntity> obtenerPorId(int rut){
-        return empleadoRepository.findById(rut);
+    public EmpleadoEntity obtenerPorRut(int rut){
+        return empleadoRepository.findByRut(rut);
     }
 
-/*
-    public EmpleadoEntity obtenerPorRut(int rut){
-        return EmpleadoRepository.findByRut(rut);
-    }*/
+    public int getSueldos(int rut){
+        return empleadoRepository.getSueldoByRut(rut);
+    }
+    public LocalDate getAnioIngreso(int rut){
+        return empleadoRepository.getAnioIngreso(rut);
+    }
 
     public boolean eliminarEmpleado(int rut) {
         try{

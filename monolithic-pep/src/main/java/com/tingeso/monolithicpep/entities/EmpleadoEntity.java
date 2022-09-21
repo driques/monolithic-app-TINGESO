@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "empleado")
@@ -19,6 +20,10 @@ public class EmpleadoEntity {
     public String nombres;
     public String fecha_nacimiento;
     public String id_categoria;
-    public String ingreso_empresa;
+    public LocalDate ingreso_empresa;
+
+    public String getCategoria(){
+        return this.id_categoria;
+    }
 
 }

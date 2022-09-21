@@ -2,8 +2,10 @@ package com.tingeso.monolithicpep.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "horas_extra")
@@ -12,10 +14,11 @@ import javax.persistence.*;
 @AllArgsConstructor
 public class HorasExtraEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(unique = true, nullable = false)
-    private int id_he;
+    private int id;
 
-    private int monto_hora;
-    private String id_categoria;
+    private int rut;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate fecha;
 }

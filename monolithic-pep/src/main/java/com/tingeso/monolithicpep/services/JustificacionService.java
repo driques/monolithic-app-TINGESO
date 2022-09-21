@@ -41,7 +41,9 @@ public class JustificacionService {
     public EmpleadoEntity obtenerPorRut(int rut){
         return EmpleadoRepository.findByRut(rut);
     }*/
-
+    public String[] getDatesByRut(int rut){
+    return justificacionRepository.getDateByRut(rut);
+}
     public boolean eliminarJustificacion(int id) {
         try{
             justificacionRepository.deleteById(id);

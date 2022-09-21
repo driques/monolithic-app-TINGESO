@@ -1,13 +1,13 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>My Web App</title>
+    <title>Justificar Empleado</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
 <div class="container-sm">
-    <form th:object="${empleadoJustificar}" th:action="@{/empleado/justificar/} + ${empleadoJustificar.rut}" method="post">
+    <form th:object="${empleadoJustificar}" th:action="@{/justificar/} + ${empleadoJustificar.rut}" method="post">
         <div class="form-group">
             <label for="rut">Rut del empleado</label>
             <input autocomplete="off" autofocus th:field="*{rut}" id="rut"
@@ -23,6 +23,7 @@
         <br>
         <br>
         <button class="btn btn-success" type="submit">Justificar</button>
+        <a class="btn btn-danger" th:href="@{/}" role="button">Salir</a>
     </form>
 
 
