@@ -23,18 +23,21 @@ public class UploadController {
     }
 
 
+
+
     @PostMapping("/upload")
     public String UploadData(@RequestParam("file") MultipartFile file, RedirectAttributes attributes) throws IOException {
         if(file.isEmpty()){
             System.out.println("Error en la subida de archivos");
             return null;
         }
+        System.out.println("test1");
         String newDir = createPath();
+        System.out.println(newDir+"<- newDir");
+
+
         StringBuilder constructor = new StringBuilder();
         constructor.append(newDir);
-        constructor.append(File.separator);
-        constructor.append("data_file");
-        constructor.append(File.separator);
         constructor.append(file.getOriginalFilename());
 
         byte[] dataBytes = file.getBytes();
@@ -53,17 +56,15 @@ public class UploadController {
 
         return "status";
     }
-
     public String createPath(){
-        String directoryName = "src/main/resources/data_file";
+        System.out.println("Creando el nuevo path....");
+        String directoryName = "/";
         File directory = new File(directoryName);
         if (! directory.exists()){
             directory.mkdir();
         }
         String newPath = directory.getAbsolutePath();
-        newPath = newPath.replace("/data_file","");
         return newPath;
-
     }
 
 

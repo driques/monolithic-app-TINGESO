@@ -11,5 +11,4 @@ public interface PlanillaRepository extends CrudRepository<PlanillaEntity,Intege
     @Modifying
     @Query(value = "TRUNCATE TABLE planilla;",nativeQuery = true)
     void dropTable();
-
 }

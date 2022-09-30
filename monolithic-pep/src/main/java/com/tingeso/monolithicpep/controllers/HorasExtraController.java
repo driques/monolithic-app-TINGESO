@@ -35,6 +35,6 @@ public class HorasExtraController {
         HorasExtraEntity crearHoraExtra = new HorasExtraEntity();
         crearHoraExtra.setRut(rut);
         model.addAttribute("horaExtra",crearHoraExtra );
-        return "/horaextra";
+        return "horaextra";
     }
 }

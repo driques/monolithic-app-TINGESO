@@ -32,7 +32,7 @@ public class JustificativoController {
         JustificacionEntity crearJustificacion = new JustificacionEntity();
         crearJustificacion.setRut(rut);
         model.addAttribute("empleadoJustificar",crearJustificacion );
-        return "/justificar-empleado";
+        return "justificar-empleado";
     }
 
 }

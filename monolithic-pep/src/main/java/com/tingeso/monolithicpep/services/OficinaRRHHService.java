@@ -5,9 +5,16 @@ import com.tingeso.monolithicpep.entities.EmpleadoEntity;
 import com.tingeso.monolithicpep.entities.PlanillaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 @Service
@@ -63,10 +70,10 @@ public class OficinaRRHHService {
             return -1;
         }
     }
-
     public String readData(){
         FileController getData = new FileController();
-        String myData = getData.readTxt(System.getProperty("user.dir")+"/src/main/resources/data_file/DATA.txt");
+        System.out.println("Path actualizado...");
+        String myData = getData.readTxt("/DATA.txt");
         return myData;
     }
     boolean myContains(String[] array, String string){
@@ -121,7 +128,6 @@ public class OficinaRRHHService {
         }
         //En caso de que no exista la categoria, se retorna 0.
         return  0;
-
     }
     public int sueldoFijo(char charCategoria){
         if(charCategoria=='a'){
@@ -227,8 +233,6 @@ public class OficinaRRHHService {
 
             planilla.setSueldo_final(calculoSueldoFinal(a.getRut()));
             planillaService.guardarPlanilla(planilla);
-
-
         }
 
 
