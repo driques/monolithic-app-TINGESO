@@ -17,7 +17,7 @@ services:
     image: driques/monolithic-app.jar
     container_name: muebles_santiago
     ports:
-      - '8080:8080'
+      - '3000:3000'
     depends_on:
       - db
     environment:
