@@ -6,10 +6,9 @@ import com.tingeso.monolithicpep.entities.PlanillaEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
@@ -234,8 +233,21 @@ public class OficinaRRHHService {
             planilla.setSueldo_final(calculoSueldoFinal(a.getRut()));
             planillaService.guardarPlanilla(planilla);
         }
-
-
     }
+
+    public void removePath(){
+        Path path = Paths.get("/DATA.txt");
+        try {
+            Files.delete(path);
+        } catch (NoSuchFileException x) {
+            System.err.format("%s: no such" + " file or directory%n", path);
+        } catch (DirectoryNotEmptyException x) {
+            System.err.format("%s not empty%n", path);
+        } catch (IOException x) {
+            // File permission problems are caught here.
+            System.err.println(x);
+        }
+    }
+
 
 }

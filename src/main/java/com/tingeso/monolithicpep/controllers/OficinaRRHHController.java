@@ -26,5 +26,11 @@ public class OficinaRRHHController {
         model.addAttribute("empleadosPlanilla",empleadosPlanilla);
         return "planilla";
     }
+    @GetMapping("/delete-datafile")
+    public String deleteDataFile(){
+        oficinaRRHHService.removePath();
+        return "planilla";
+
+    }
 
 }

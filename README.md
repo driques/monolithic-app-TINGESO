@@ -1,5 +1,5 @@
 # monolithic-app-TINGESO
-# CONTROL 1 TALLER DE BASE DE DATOS/BASE DE DATOS AVANZADA
+# Pep 1 app monolitica tingeso
 
 _En el presente laboratorio se busca responder las problemáticas entregadas en la evaluacion uno para el taller de ingenieria de software._
 

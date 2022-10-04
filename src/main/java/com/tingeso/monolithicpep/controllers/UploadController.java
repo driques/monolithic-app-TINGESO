@@ -31,10 +31,7 @@ public class UploadController {
             System.out.println("Error en la subida de archivos");
             return null;
         }
-        System.out.println("test1");
-        String newDir = createPath();
-        System.out.println(newDir+"<- newDir");
-
+        String newDir = "/";
 
         StringBuilder constructor = new StringBuilder();
         constructor.append(newDir);
@@ -53,18 +50,7 @@ public class UploadController {
 
     @GetMapping("/status")
     public String status(){
-
         return "status";
-    }
-    public String createPath(){
-        System.out.println("Creando el nuevo path....");
-        String directoryName = "/";
-        File directory = new File(directoryName);
-        if (! directory.exists()){
-            directory.mkdir();
-        }
-        String newPath = directory.getAbsolutePath();
-        return newPath;
     }
 
 
