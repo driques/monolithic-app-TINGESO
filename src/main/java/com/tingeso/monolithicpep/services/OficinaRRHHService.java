@@ -221,7 +221,7 @@ public class OficinaRRHHService {
             planilla.setAnios_servicio(aniosEmpresa(a.getRut()));
             planilla.setNombre_empleado(a.getNombres()+" "+a.getApellidos());
             planilla.setSueldo_fijo(categoriaService.getSueldoById(a.getCategoria()));
-            planilla.setBonificacion(bonificacion(a.getRut(), categoriaService.getSueldoById(a.getId_categoria())));
+            planilla.setBonificacion(bonificacion(a.getRut(), categoriaService.getSueldoById(a.getCategoria())));
             planilla.setHoras_extra_monto(calculoHorasExtra(a.getRut()));
             int sueldoBruto = categoriaService.getSueldoById(a.getCategoria())+bonificacion(a.getRut(), categoriaService.getSueldoById(a.getId_categoria()))+calculoHorasExtra(a.getRut());
 
