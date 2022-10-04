@@ -7,7 +7,7 @@ services:
       - 54321:5432
     volumes:
     - ./data/db:/var/lib/postgres
-    -  ./pgdata/load_db.sql:/docker-entrypoint-initdb.d/load_db.sql
+    -  ./load_db.sql:/docker-entrypoint-initdb.d/load_db.sql
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin
