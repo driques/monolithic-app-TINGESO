@@ -161,7 +161,7 @@ public class OficinaRRHHService {
                     int hora = Integer.valueOf(arrayFormat[0]);
                     int minutos = Integer.valueOf(arrayFormat[1]);
                     if((hora>=8 && minutos>=10) || (hora==9 && minutos<=10)){
-                        System.out.println("rut-> "+ fileController.formatToDate(a));
+                        System.out.println("rut-> "+ fileController.formatToRut(a));
                         System.out.println(hora+":"+minutos);
                         if (hora==8 && minutos>=10 && minutos<25) porcentajeDescuento = porcentajeDescuento + 1;
                         if (hora==8 && minutos>=25 && minutos<45) porcentajeDescuento = porcentajeDescuento + 3;
