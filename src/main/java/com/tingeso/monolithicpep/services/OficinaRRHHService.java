@@ -173,6 +173,7 @@ public class OficinaRRHHService {
                 }
             }
         }
+        System.out.println("Descuento total: "+porcentajeDescuento);
         return porcentajeDescuento;
     }
 
