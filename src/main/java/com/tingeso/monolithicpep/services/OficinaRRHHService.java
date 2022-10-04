@@ -190,6 +190,8 @@ public class OficinaRRHHService {
     }
 
     public int bonificacion(int rut, int sueldo){
+
+        System.out.println("rut: "+rut+" sueldo: "+sueldo+" bonificaciones:"+calculoBonificaciones(rut));
         return (calculoBonificaciones(rut)*sueldo)/100;
     }
 
