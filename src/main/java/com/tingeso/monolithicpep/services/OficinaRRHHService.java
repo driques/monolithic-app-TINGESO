@@ -229,8 +229,7 @@ public class OficinaRRHHService {
             planilla.setCotizacion_previsional(getCotizacionPrevisional(brutoSinCotizacion(sueldoBruto,montoDescuento(a.getRut(),sueldoBruto))));
 
             planilla.setCotizacion_salud(getCotizacionSalud(brutoSinCotizacion(sueldoBruto,montoDescuento(a.getRut(),sueldoBruto))));
-
-            planilla.setSueldo_final(calculoSueldoFinal(a.getRut())-(montoDescuento(a.getRut(),sueldoBruto)));
+            planilla.setSueldo_final(calculoSueldoFinal(a.getRut())-(montoDescuento(a.getRut(),sueldoBruto))+calculoHorasExtra(a.getRut()));
             planillaService.guardarPlanilla(planilla);
         }
     }
