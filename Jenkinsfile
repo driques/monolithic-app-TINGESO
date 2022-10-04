@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build docker image'){
             steps {
-                sh 'docker build -t driques/monolithic-app .'
+                sh 'docker build --no-cache  -t driques/monolithic-app .'
             }
         }
         stage('Push docker image'){
