@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.tingeso</groupId>
 	<artifactId>monolithic-pep</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>v1</version>
 	<name>monolithic-pep</name>
 	<description>Monolithic app for tingeso.</description>
 	<properties>
