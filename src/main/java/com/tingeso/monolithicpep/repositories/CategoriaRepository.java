@@ -11,5 +11,5 @@ import java.time.LocalDate;
 @Repository
 public interface CategoriaRepository extends CrudRepository<CategoriaEntity,String> {
     @Query(value = "select sueldo from categoria where id_categoria= :rut", nativeQuery = true)
-    int getSueldoById(@Param("rut") String rut);
+    int getSueldoById(@Param("rut") String rut)
 }
