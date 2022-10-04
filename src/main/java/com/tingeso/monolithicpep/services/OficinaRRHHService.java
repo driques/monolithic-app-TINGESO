@@ -50,16 +50,16 @@ public class OficinaRRHHService {
         Period period = Period.between(empleadoIngreso,hoy);
         if(period.getYears()<5){
             return 0;
-        } else if (period.getYears()>=5) {
+        } else if (period.getYears()>=5 && period.getYears()<10) {
             return 5;
 
-        } else if (period.getYears()>=10) {
+        } else if (period.getYears()>=10 && period.getYears()<15) {
             return 8;
 
-        } else if (period.getYears()>=15) {
+        } else if (period.getYears()>=15 && period.getYears()<20) {
             return 11;
             
-        } else if (period.getYears()>=20) {
+        } else if (period.getYears()>=20 && period.getYears()<25) {
             return 14;
             
         } else if (period.getYears()>=25) {
@@ -71,7 +71,6 @@ public class OficinaRRHHService {
     }
     public String readData(){
         FileController getData = new FileController();
-        System.out.println("Path actualizado...");
         String myData = getData.readTxt("/DATA.txt");
         return myData;
     }
@@ -161,8 +160,6 @@ public class OficinaRRHHService {
                     int hora = Integer.valueOf(arrayFormat[0]);
                     int minutos = Integer.valueOf(arrayFormat[1]);
                     if((hora>=8 && minutos>10) || (hora==9 && minutos<=10)){
-                        System.out.println("rut-> "+ fileController.formatToRut(a));
-                        System.out.println(hora+":"+minutos);
                         if (hora==8 && minutos>10 && minutos<25) porcentajeDescuento = porcentajeDescuento + 1;
                         if (hora==8 && minutos>=25 && minutos<45) porcentajeDescuento = porcentajeDescuento + 3;
                         if ((hora==8 && minutos>=45 && minutos<60)||(hora==9 && minutos<=10)) porcentajeDescuento = porcentajeDescuento + 6;
@@ -173,7 +170,6 @@ public class OficinaRRHHService {
                 }
             }
         }
-        System.out.println("Descuento total: "+porcentajeDescuento);
         return porcentajeDescuento;
     }
 
@@ -191,7 +187,6 @@ public class OficinaRRHHService {
 
     public int bonificacion(int rut, int sueldo){
 
-        System.out.println("rut: "+rut+" sueldo: "+sueldo+" bonificaciones:"+calculoBonificaciones(rut));
         return (calculoBonificaciones(rut)*sueldo)/100;
     }
 
