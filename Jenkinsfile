@@ -7,12 +7,12 @@ pipeline {
         stage('Build jar file') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/driques/monolithic-app-TINGESO']]])
-                sh 'mvn package -DskipTests'
+                sh 'mvn install -DskipTests'
             }
         }
         stage('Build docker image'){
             steps {
-                sh 'docker build --no-cache  -t driques/monolithic-app .'
+                sh 'docker build -t driques/monolithic-app .'
             }
         }
         stage('Push docker image'){
