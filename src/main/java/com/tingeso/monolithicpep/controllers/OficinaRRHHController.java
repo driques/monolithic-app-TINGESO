@@ -29,7 +29,7 @@ public class OficinaRRHHController {
     @GetMapping("/delete-datafile")
     public String deleteDataFile(){
         oficinaRRHHService.removePath();
-        return "planilla";
+        return "index";
 
     }
 
