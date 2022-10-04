@@ -230,7 +230,7 @@ public class OficinaRRHHService {
 
             planilla.setCotizacion_salud(getCotizacionSalud(brutoSinCotizacion(sueldoBruto,montoDescuento(a.getRut(),sueldoBruto))));
 
-            planilla.setSueldo_final(calculoSueldoFinal(a.getRut()));
+            planilla.setSueldo_final(calculoSueldoFinal(a.getRut())-(montoDescuento(a.getRut(),sueldoBruto)));
             planillaService.guardarPlanilla(planilla);
         }
     }
