@@ -7,7 +7,7 @@ pipeline {
         stage('Build jar file') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/driques/monolithic-app-TINGESO']]])
-                sh 'mvn install -DskipTests'
+                sh 'mvn clean install -DskipTests'
             }
         }
         stage('Build docker image'){
