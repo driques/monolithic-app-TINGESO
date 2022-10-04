@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build docker image'){
             steps {
-                sh 'docker build -t driques/monolithic-app.jar .'
+                sh 'docker build -t driques/monolithic-app .'
             }
         }
         stage('Push docker image'){
@@ -22,7 +22,7 @@ pipeline {
                         sh 'docker login -u driques -p ${dckrpass}'
                     }
         
-                    sh 'docker push driques/monolithic-app.jar'
+                    sh 'docker push driques/monolithic-app'
                 }
             }
         }
