@@ -14,7 +14,7 @@ services:
       POSTGRES_DB: muebles_santiago
 
   app:
-    image: driques/monolithic-app.jar
+    image: driques/monolithic-app:latest
     container_name: muebles_santiago
     ports:
       - '3000:3000'
