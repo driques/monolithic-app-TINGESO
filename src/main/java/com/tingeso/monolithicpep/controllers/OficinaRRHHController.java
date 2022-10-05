@@ -24,7 +24,7 @@ public class OficinaRRHHController {
         oficinaRRHHService.creaPlanilla();
         ArrayList<PlanillaEntity> empleadosPlanilla=planillaService.obtenerEmpleados();
         model.addAttribute("empleadosPlanilla",empleadosPlanilla);
-        return "/planilla";
+        return "planilla";
     }
     @GetMapping("/delete-datafile")
     public String deleteDataFile(){

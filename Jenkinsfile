@@ -15,7 +15,7 @@ pipeline {
                         sh 'mvn test'
                     }
                 }
-	    
+
 
         stage('Build docker image'){
             steps {

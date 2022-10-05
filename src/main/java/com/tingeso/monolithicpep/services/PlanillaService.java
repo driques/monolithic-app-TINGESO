@@ -12,7 +12,6 @@ import java.util.ArrayList;
 @Service
 public class PlanillaService {
     @Autowired
-
     PlanillaRepository planillaRepository;
 
     public ArrayList<PlanillaEntity> obtenerEmpleados(){
