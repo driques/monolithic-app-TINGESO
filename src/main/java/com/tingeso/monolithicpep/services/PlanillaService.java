@@ -19,9 +19,8 @@ public class PlanillaService {
     }
 
     @Transactional
-    public boolean dropTable(){
+    public void dropTable(){
         planillaRepository.dropTable();
-        return false;
     }
 
     public PlanillaEntity guardarPlanilla(PlanillaEntity planilla){
