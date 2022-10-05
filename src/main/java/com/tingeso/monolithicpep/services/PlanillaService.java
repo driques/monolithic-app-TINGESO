@@ -15,7 +15,6 @@ public class PlanillaService {
 
     PlanillaRepository planillaRepository;
 
-
     public ArrayList<PlanillaEntity> obtenerEmpleados(){
         return (ArrayList<PlanillaEntity>) planillaRepository.findAll();
     }
