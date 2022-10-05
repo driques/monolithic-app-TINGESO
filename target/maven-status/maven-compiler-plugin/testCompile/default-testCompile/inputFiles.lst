@@ -1,2 +1,5 @@
-/Users/driques/Documents/2-2022/Tingeso/PEP 1 TINGESO/monolithic-app-TINGESO/src/test/java/com/tingeso/monolithicpep/MonolithicPepApplicationTests.java
-/Users/driques/Documents/2-2022/Tingeso/PEP 1 TINGESO/monolithic-app-TINGESO/src/test/java/com/tingeso/monolithicpep/CategoriaServiceTest.java
+/Users/driques/Documents/2-2022/Tingeso/PEP 1 TINGESO/monolithic-app-TINGESO/src/test/java/com/tingeso/monolithicpep/services/CategoriaServiceTest.java
+/Users/driques/Documents/2-2022/Tingeso/PEP 1 TINGESO/monolithic-app-TINGESO/src/test/java/com/tingeso/monolithicpep/services/OficinaRRHHServiceTest.java
+/Users/driques/Documents/2-2022/Tingeso/PEP 1 TINGESO/monolithic-app-TINGESO/src/test/java/com/tingeso/monolithicpep/services/JustificacionServiceTest.java
+/Users/driques/Documents/2-2022/Tingeso/PEP 1 TINGESO/monolithic-app-TINGESO/src/test/java/com/tingeso/monolithicpep/services/EmpleadoServiceTest.java
+/Users/driques/Documents/2-2022/Tingeso/PEP 1 TINGESO/monolithic-app-TINGESO/src/test/java/com/tingeso/monolithicpep/services/HorasExtraServiceTest.java

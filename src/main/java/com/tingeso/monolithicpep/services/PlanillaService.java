@@ -1,7 +1,6 @@
 package com.tingeso.monolithicpep.services;
 
 
-import com.tingeso.monolithicpep.entities.EmpleadoEntity;
 import com.tingeso.monolithicpep.entities.PlanillaEntity;
 import com.tingeso.monolithicpep.repositories.PlanillaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +21,9 @@ public class PlanillaService {
     }
 
     @Transactional
-    public void dropTable(){
+    public boolean dropTable(){
         planillaRepository.dropTable();
+        return false;
     }
 
     public PlanillaEntity guardarPlanilla(PlanillaEntity planilla){

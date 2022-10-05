@@ -3,7 +3,9 @@ package com.tingeso.monolithicpep.services;
 import com.tingeso.monolithicpep.controllers.FileController;
 import com.tingeso.monolithicpep.entities.EmpleadoEntity;
 import com.tingeso.monolithicpep.entities.PlanillaEntity;
+import lombok.Generated;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.io.File;
@@ -20,6 +22,7 @@ import java.util.stream.Stream;
 public class OficinaRRHHService {
     @Autowired
     EmpleadoService empleadoService;
+
     @Autowired
     HorasExtraService horasExtraService;
     @Autowired
@@ -36,7 +39,9 @@ public class OficinaRRHHService {
     int cotizacionSalud = 8;
     int cotizacionPrevisional = 10;
 
+
     public int aniosEmpresa(int rut){
+        System.out.println("Rut: " + rut);
         LocalDate empleadoIngreso = empleadoService.getAnioIngreso(rut);
         LocalDate hoy = LocalDate.now();
         Period period = Period.between(empleadoIngreso,hoy);
@@ -82,6 +87,7 @@ public class OficinaRRHHService {
         }
         return false;
     }
+
     public int calculoHorasExtra(int rut){
         EmpleadoEntity empleado = empleadoService.obtenerPorRut(rut);
         int horasExtra = 0;
@@ -211,7 +217,7 @@ public class OficinaRRHHService {
 
     public void creaPlanilla(){
         planillaService.dropTable();
-        ArrayList<EmpleadoEntity> empleados=empleadoService.obtenerEmpleados();
+        List<EmpleadoEntity> empleados=empleadoService.obtenerEmpleados();
         for(EmpleadoEntity a : empleados){
             PlanillaEntity planilla = new PlanillaEntity();
             planilla.setRut(a.getRut());
@@ -247,6 +253,7 @@ public class OficinaRRHHService {
             System.err.println(x);
         }
     }
+
 
 
 }

@@ -8,14 +8,15 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class EmpleadoService {
     @Autowired
     EmpleadoRepository empleadoRepository;
 
-    public ArrayList<EmpleadoEntity> obtenerEmpleados(){
-        return (ArrayList<EmpleadoEntity>) empleadoRepository.findAll();
+    public List<EmpleadoEntity> obtenerEmpleados(){
+        return (List<EmpleadoEntity>) empleadoRepository.findAll();
     }
 
     public EmpleadoEntity guardarEmpleado(EmpleadoEntity empleado){

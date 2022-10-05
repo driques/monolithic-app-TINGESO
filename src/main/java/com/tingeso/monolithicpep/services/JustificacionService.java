@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -13,8 +14,8 @@ public class JustificacionService {
     @Autowired
     JustificacionRepository justificacionRepository;
 
-    public ArrayList<JustificacionEntity> obtenerJustificaciones(){
-        return (ArrayList<JustificacionEntity>) justificacionRepository.findAll();
+    public List<JustificacionEntity> obtenerJustificaciones(){
+        return (List<JustificacionEntity>) justificacionRepository.findAll();
     }
 
     public JustificacionEntity guardarJustificacion(JustificacionEntity justificacion){

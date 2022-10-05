@@ -7,14 +7,15 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class HorasExtraService {
     @Autowired
     HorasExtraRepository horasExtraRepository;
-    public ArrayList<HorasExtraEntity> obtenerHorasExtra() {
-        return (ArrayList<HorasExtraEntity>) horasExtraRepository.findAll();
+    public List<HorasExtraEntity> obtenerHorasExtra() {
+        return (List<HorasExtraEntity>) horasExtraRepository.findAll();
     }
 
     public HorasExtraEntity guardarHoraExtra(HorasExtraEntity horasExtra) {

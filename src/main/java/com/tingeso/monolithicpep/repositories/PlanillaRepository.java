@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface PlanillaRepository extends CrudRepository<PlanillaEntity,Integer> {
     @Modifying
     @Query(value = "TRUNCATE TABLE planilla;",nativeQuery = true)
-    void dropTable();
+    boolean dropTable();
 }

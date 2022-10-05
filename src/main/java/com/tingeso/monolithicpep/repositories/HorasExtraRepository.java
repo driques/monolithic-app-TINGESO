@@ -19,9 +19,6 @@ public interface HorasExtraRepository extends CrudRepository<HorasExtraEntity, I
             nativeQuery = true)
     String[] getDateByRut(@Param("rut") int rut);
 
-    /*
-    @Query(value = "select * from justificacion as e where e.rut = :rut",
-            nativeQuery = true)
-    JustificacionEntity findByNameNativeQuery(@Param("rut") int rut);*/
+
 
 }
